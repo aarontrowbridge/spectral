@@ -29,3 +29,4 @@ For a minimial setup, check out the [exampleSite](exampleSite) directory. Its la
 This theme is licensed under the terms of the Creative Commons Attribution 3.0
 Unported (like html5up’s original theme). See the LICENSE.md file for more
 information on this.
+ 

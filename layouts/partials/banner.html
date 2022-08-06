@@ -1,5 +1,7 @@
 <section id="banner">
 	<div class="inner">
+    {{ $image := .Site.Params.logo }}
+    <p><img src="{{ $image }}" alt="logo" class="center"></p>
     <h2>{{ .Site.Params.fancytitle | safeHTML }}</h2>
     <p>{{ .Site.Params.description | safeHTML }}</p>
     {{ if and .Site.Params.startbuttonText .Site.Params.startbuttonLink }}

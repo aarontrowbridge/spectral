@@ -6,16 +6,28 @@
 -->
 <html lang="{{ .Site.Language.Lang | default "en-us" }}">
 	<head>
-	  <title>{{ .Title }}</title>
+	  	<title>
+			{{ .Title }}
+		</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="referrer" content="origin">
+ 	<!-- our project just needs Font Awesome Solid + Brands -->
+	<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+	<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+	<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
 
-    {{ with .Site.Params.description }}<meta name="description" content="{{ . | plainify }}">{{ end }}
-    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.description }}
+		<meta name="description" content="{{ . | plainify }}">
+	{{ end }}
+
+    {{ with .Site.Params.author }}
+		<meta name="author" content="{{ . }}">
+	{{ end }}
+
     {{ range .AlternativeOutputFormats -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
+    {{ end }}
     {{ hugo.Generator }}
 
     {{ partial "stylesheets.html" . }}
@@ -26,26 +38,41 @@
     {{ template "_internal/opengraph.html" . }}
     {{ partial "hooks/head-end.html" . }}
 	</head>
+
 	<body class="landing is-preload">
 
 		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+		<div id="page-wrapper">
 
-				<!-- Header -->
-          <header id="header"{{ if .Page.IsHome }} class="alt"{{ end }}>
-            <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-						<nav id="nav">
+		<!-- Header -->
+		<header id="header"{{ if .Page.IsHome }} class="alt"{{ end }}>
+
+			<h1>
+				<a href="{{ .Site.BaseURL }}">
+					{{ .Site.Title }}
+				</a>
+			</h1>
+
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle">
+							<span>
+								{{ i18n "" }}
+							</span>
+						</a>
+						<div id="menu">
 							<ul>
-								<li class="special">
-                  <a href="#menu" class="menuToggle"><span>{{ i18n "menu" }}</span></a>
-									<div id="menu">
-										<ul>
-				              {{ range .Site.Params.menu.main }}
-				              <li><a href="{{ .url | relURL }}">{{ .title }}</a></li>
-				              {{ end }}
-										</ul>
-									</div>
+								{{ range .Site.Params.menu.main }}
+								<li>
+									<a href="{{ .url | relURL }}">
+										{{ .title }}
+									</a>
 								</li>
+								{{ end }}
 							</ul>
-						</nav>
-					</header>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>

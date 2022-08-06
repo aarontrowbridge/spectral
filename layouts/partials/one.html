@@ -5,15 +5,44 @@
 	<section id="one" class="wrapper style1 special">
 		<div class="inner">
 			<header class="major">
-        <h2>{{ .title | safeHTML}}</h2>
+        		<h2>
+					{{ .title | safeHTML}}
+				</h2>
+        		{{ partial "body_text.html" (dict "context" . "md" $md) }}
 
-        {{ partial "body_text.html" (dict "context" . "md" $md) }}
+				<div style="width: 100%; overflow: hidden; padding-top: 100px">
+					{{ range $i, $item := .subtitle }}
+						{{ if (modBool $i 2) }}
+						<div style="width: 50%; float: left;">
+							<h3>
+								{{ .title }}	
+							</h3>
+							{{ partial "body_text.html" (dict "context" $item "md" $md) }}
+						</div>
+
+						{{ else }}
+						<div style="width: 50%; float: right;">
+							<h3>
+								{{ .title }}	
+							</h3>
+							{{ partial "body_text.html" (dict "context" $item "md" $md) }}
+						</div>
+						{{ end }}
+					{{ end }}
+				</div>
 			</header>
-			<ul class="icons major">
-        {{ range .icon }}
-        <li><span class="icon {{ .icon }} major style{{ .style }}"><span class="label">{{ .label }}</span></span></li>
-        {{ end }}
-			</ul>
+
+			{{/*  <ul class="icons major">
+        		{{ range .icon }}
+					<li>
+						<span class="icon {{ .icon }} major style{{ .style }}">
+							<span class="label">
+								{{ .label }}
+							</span>
+						</span>
+					</li>
+        		{{ end }}
+			</ul>  */}}
 		</div>
 	</section>
 {{ end }}

@@ -132,6 +132,19 @@ input, select, textarea {
 	appearance: none;
 }
 
+
+.circular_img {
+	clip-path: circle();
+	object-fit: cover;
+	width: 150px;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+
+
 /* Basic */
 
 	@-ms-viewport {
@@ -228,6 +241,7 @@ input, select, textarea {
 		letter-spacing: 0.225em;
 		line-height: 1em;
 		margin: 0 0 1em 0;
+		/* here sets all header text to uppercase */
 		text-transform: uppercase;
 	}
 
@@ -2074,7 +2088,7 @@ input, select, textarea {
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: "Font Awesome 5 Free";
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2117,15 +2131,15 @@ input, select, textarea {
 			}
 
 		.icon.style1 {
-			color: #00ffcc;
+			color: #3b3b3b;
 		}
 
 		.icon.style2 {
-			color: #00f0ff;
+			color: #3b3b3b;;
 		}
 
 		.icon.style3 {
-			color: #76ddff;
+			color: #3b3b3b;
 		}
 
 /* Image */
@@ -2526,7 +2540,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ed4933;
+			background-color: #9033ed;
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2536,7 +2550,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #ef5e4a !important;
+				background-color: #9033ed !important;
 			}
 
 			input[type="submit"].primary:active,
@@ -2544,7 +2558,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #eb341c !important;
+				background-color: #9033ed !important;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2594,11 +2608,12 @@ input, select, textarea {
 	}
 
 		.features li {
-			padding: 4em 4em 2em 6em ;
+			padding: 4em;
 			display: block;
 			position: relative;
-			text-align: left;
-			width: 50%;
+			text-align: center;
+			width: 45%;
+			height: width; 
 		}
 
 			.features li:nth-child(1) {
@@ -2643,7 +2658,7 @@ input, select, textarea {
 
 			.features li:before {
 				display: block;
-				color: #00ffcc;
+				color: #7ed65d;
 				position: absolute;
 				left: 1.75em;
 				top: 2.75em;
@@ -2856,7 +2871,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #7ed65d;
 			color: #c8ece9;
 		}
 
@@ -2881,7 +2896,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header p {
-				color: #a6e0db;
+				color: #7ed65d;
 			}
 
 			.wrapper.style1 header.major h2, .wrapper.style1 header.major h3, .wrapper.style1 header.major h4, .wrapper.style1 header.major h5, .wrapper.style1 header.major h6 {
@@ -2889,7 +2904,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header.major p {
-				color: #c8ece9;
+				color: #ffffff;
 			}
 
 			.wrapper.style1 label {
@@ -2910,7 +2925,7 @@ input, select, textarea {
 
 				.wrapper.style1 select option {
 					color: #ffffff;
-					background: #21b2a6;
+					background: #7ed65d;
 				}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -2926,7 +2941,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #21b2a6;
+				color: #7ed65d;
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
@@ -3019,7 +3034,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #505393;
+			background-color: #898989;
 			color: #d3d4e4;
 		}
 
@@ -3390,7 +3405,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: #7ed65d ;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3947,7 +3962,7 @@ input, select, textarea {
 			letter-spacing: 0.225em;
 			list-style: none;
 			padding: 0;
-			text-transform: uppercase;
+			text-transform: lowercase;
 		}
 
 			#footer .copyright li {
