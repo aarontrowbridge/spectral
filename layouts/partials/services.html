@@ -1,0 +1,44 @@
+{{ $md := .Site.Params.body_is_markdown | default false }}
+
+{{ with .Site.Params.services }}
+{{ if .enable }}
+<section id="three" class="wrapper style3 special">
+	<div class="inner">
+		<header class="major">
+         <h2>
+            {{ .title | safeHTML }}
+         </h2>
+         {{ partial "body_text.html" (dict "context" . "md" $md) }}
+		</header>
+		<ul class="features">
+         {{ range .service }}
+         <li>
+            <h3>{{ .title | safeHTML }}</h3>
+            <p>{{ .body | safeHTML }}</p>
+            <i class="fa-solid fa-{{ .icon }}"></i>
+         </li>
+         {{ end }}
+		</ul>
+
+      <header class="major">
+         <h2>
+            {{ .techtitle | safeHTML }}
+         </h2>
+      </header>
+
+      <ul class="icons major">
+         {{ range .icon }}
+            <li>
+               <i class="fa-brands fa-{{ .icon }}"></i>
+               {{/*  <span class="icon {{ .icon }} major style{{ .style }}">
+                  <span class="label">
+                     {{ .label }}
+                  </span>
+               </span>  */}}
+            </li>
+         {{ end }}
+      </ul>
+	</div>
+</section>
+{{ end }}
+{{ end }}

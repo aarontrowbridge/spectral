@@ -2131,7 +2131,7 @@ input, select, textarea {
 			}
 
 		.icon.style1 {
-			color: #3b3b3b;
+			color: #313131;
 		}
 
 		.icon.style2 {
@@ -2355,6 +2355,7 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		padding-top: 0em;
 	}
 
 		ul.icons li {
@@ -2368,6 +2369,7 @@ input, select, textarea {
 
 		ul.icons.major {
 			padding: 1em 0;
+			padding-top: 0em;
 		}
 
 			ul.icons.major li {
@@ -2540,7 +2542,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #7ed65d;
+			background-color: #95c756;
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2558,7 +2560,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color:  #7ed65d!important;
+				background-color:  #95c756!important;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2605,6 +2607,7 @@ input, select, textarea {
 		list-style: none;
 		padding: 0;
 		width: 100%;
+		padding-bottom: 5em;
 	}
 
 		.features li {
@@ -3066,6 +3069,9 @@ input, select, textarea {
 				border-color: rgba(0, 0, 0, 0.125);
 			}
 
+			.wrapper.style3 header.major h2
+
+
 			.wrapper.style3 header.major p {
 				color: #d3d4e4;
 			}
@@ -3129,6 +3135,11 @@ input, select, textarea {
 
 			.wrapper.style3 .icon.major {
 				border-color: rgba(0, 0, 0, 0.125);
+			}
+
+			.wrapper.style3 i {
+				color: #313131;
+				font-size: 3em;
 			}
 
 			.wrapper.style3 ul.alt li {
@@ -3405,7 +3416,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #7ed65d ;
+		background: #2da34a ;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
