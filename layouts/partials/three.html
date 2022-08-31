@@ -2,18 +2,23 @@
 
 {{ with .Site.Params.three }}
 {{ if .enable }}
-<section id="three" class="wrapper style3 special">
+<section id="team" class="wrapper style3 special">
 	<div class="inner">
 		<header class="major">
          <h2>{{ .title | safeHTML }}</h2>
          {{ partial "body_text.html" (dict "context" . "md" $md) }}
 		</header>
-		<ul class="features">
+		<ul class="people">
          {{ range .feature }}
          <li>
             <img class="circular_img" src="{{ .img }}">
             <h3>{{ .title | safeHTML }}</h3>
             <p>{{ .body | safeHTML }}</p>
+            {{ range .socials }}
+            <a href="{{ .social.url }}" target="_blank">
+               <i class="social-icons fab fa-{{ .social.icon }}"></i>
+            </a>
+            {{ end }}
          </li>
          {{ end }}
 		</ul>

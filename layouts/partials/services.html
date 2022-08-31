@@ -2,7 +2,7 @@
 
 {{ with .Site.Params.services }}
 {{ if .enable }}
-<section id="three" class="wrapper style3 special">
+<section id="services" class="wrapper style3 special">
 	<div class="inner">
 		<header class="major">
          <h2>
@@ -15,7 +15,7 @@
          <li>
             <h3>{{ .title | safeHTML }}</h3>
             <p>{{ .body | safeHTML }}</p>
-            <i class="fa-solid fa-{{ .icon }}"></i>
+            <i class="fas fa-{{ .icon }}"></i>
          </li>
          {{ end }}
 		</ul>
@@ -29,7 +29,7 @@
       <ul class="icons major">
          {{ range .icon }}
             <li>
-               <i class="fa-brands fa-{{ .icon }}"></i>
+               <i class="fab fa-{{ .icon }}"></i>
                {{/*  <span class="icon {{ .icon }} major style{{ .style }}">
                   <span class="label">
                      {{ .label }}
