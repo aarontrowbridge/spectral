@@ -18,6 +18,10 @@
 	<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">  */}}
 	{{/*  <script src="https://kit.fontawesome.com/ae09313335.js" crossorigin="anonymous"></script>  */}}
 
+	<link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" href="/favicon/android-chrome-512x512.png">
+	<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+
 	<link href="fontawesome/css/all.css" rel="stylesheet">
 
     {{ with .Site.Params.description }}
@@ -39,6 +43,12 @@
     {{ end }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
+
+	{{/*  if enableGoogleAnalytics include the template  */}}
+	{{ if .Site.Params.enableGoogleAnalytics }}
+		{{ template "_internal/google_analytics.html" . }}
+	{{ end }}
+
     {{ partial "hooks/head-end.html" . }}
 	</head>
 
